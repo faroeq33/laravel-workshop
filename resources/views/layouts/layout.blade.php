@@ -5,11 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>Sticky Footer Navbar Template · Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sticky-footer-navbar/">
+    <title>laravel workshop</title>
+   
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
@@ -66,7 +63,7 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+            <h1 class="mt-5">Sticky image with fixed navbar</h1>
             <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and
                 CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the
                 <code>main &gt; .container</code>.</p>
