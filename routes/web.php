@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/categories', 'CategoryController');
+Route::resource('/categories', 'CategoryController');
 
 Auth::routes();
 
