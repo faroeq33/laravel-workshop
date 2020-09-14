@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="mt-5">Categories</h1>
-
+    
     <table class="table">
         <thead>
             <tr>
