@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\CategoryStoreRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -35,11 +36,13 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        $category = Category::create(['name' => $request->name]);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->save();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('message', 'Categorie aangemaakt!');
     }
 
     /**

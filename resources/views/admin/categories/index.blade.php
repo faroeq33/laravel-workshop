@@ -3,6 +3,12 @@
 @section('content')
     <h1 class="mt-5">Categories</h1>
 
+    @if (session('message'))
+        <div class="alert-alert-danger">
+            {{ session('message') }}
+        </div>        
+    @endif
+
     <ul class="nav nav-tabs border-bottom-0">
         <li class="nav-item">
             <a class="nav-link active" href="{{ route('categories.index') }}">Index</a>
