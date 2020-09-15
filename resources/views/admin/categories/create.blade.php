@@ -7,10 +7,10 @@
 <div class="alert alert-danger">
     <ul class="mb-0 list-unstyled">
         @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>            
+        <li>{{ $error }}</li>
         @endforeach
     </ul>
-</div>    
+</div>
 @endif
 
 <ul class="nav nav-tabs">
