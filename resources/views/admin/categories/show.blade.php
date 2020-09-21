@@ -23,7 +23,7 @@
         Categories
     </div>
     <div class="card-body">
-        <h1 class="card-title">{{ $category->name }}</h1>
+        <h2 class="card-title">{{ $category->name }}</h2>
     </div>
 </div>
 @endsection

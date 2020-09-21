@@ -10899,3 +10899,15 @@ a.text-dark:focus {
   }
 }
 
+.underline {
+  text-decoration: underline;
+}
+
+.text-black {
+  color: black !important;
+}
+
+.text-white {
+  color: white !important;
+}
+

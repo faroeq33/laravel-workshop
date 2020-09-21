@@ -3,32 +3,35 @@
 @section('content')
 <h1 class="mt-5">Categories</h1>
 
-<nav class="nav">
-    <ul class="nav nav-tabs border-bottom-0">
-        <li class="nav-item border-bottom-0">
-            <a href="{{ route('categories.index')}}" class="nav-link">Index</a>
-        </li>
-        <li class="nav-item mb-0">
-            <a href="{{ route('categories.create')}}" class="nav-link">Create</a>
-        </li>
-        <li class="nav-item border-bottom-0">
-            <a href="{{ route('categories.edit', ['category' => $category->id])}}" class="nav-link active">Edit
-                Category</a>
-        </li>
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul class="mb-0 list-unstyled">
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
     </ul>
-</nav>
+</div>
+@endif
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link " href="{{ route('categories.index') }}">Index</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('categories.create') }}">Create</a>
+    </li>
+    <li class="nav-item"><a href="{{ route('categories.edit', ['category' => $category->id]) }}"
+            class="nav-link">Edit</a></li>
+</ul>
 
 <form method="POST" action="{{ route('categories.update', ['category' => $category->id]) }}">
-    @method('PUT')
+    method('PUT')
     @csrf
     <div class="form-group">
-        <label for="name">Category name</label>
-        <input type="text" name="name" class="form-control" id="name" aria-describedby="categorienameHelp"
-            value="{{ $category->name }}">
+        <label for="exampleInputEmail1" class="mt-3">Category name</label>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="categorynameHelp"
+            placeholder="Enter category name..." value="{{ $category->name }}">
     </div>
-
-    <button type="submit" name="name" class="btn btn-primary" id="name" aria-describedby="categorynameHelp"
-        value="{{ $category->name }}">Update</button>
+    <button type="submit" class="btn btn-primary">Update</button>
 </form>
-
 @endsection
