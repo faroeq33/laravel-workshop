@@ -5,8 +5,6 @@
     <h1 class="mt-5">Categories</h1>
 
     @if (session('message'))
-    <div class="alert alert-danger">
-    </div>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session('message') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
