@@ -39,17 +39,9 @@
             <tr>
                 <th class="font-weight-lighter" scope="row">{{ $category->id }}</th>
                 <td>{{ $category->name }}</td>
-                <td class="">
-                    <a class="underline"
-                        href="{{ route('categories.show', ['category' => $category->id]) }}">Details</a>
-                </td>
-                <td>
-                    <a class="underline" href="{{ route('categories.edit', ['category' => $category->id]) }}">Edit</a>
-                </td>
-                <td>
-                    <a class="underline" href="{{ route('categories.edit', ['category' => $category->id]) }}">
-                        Delete</a>
-                </td>
+                <td><a href="{{ route('categories.show', ['category' => $category->id]) }}">Details</a></td>
+                <td><a href="{{ route('categories.edit', ['category' => $category->id]) }}">Edit</a></td>
+                <td><a href="{{ route('categories.delete', ['category' => $category->id]) }}">Delete</a></td>
             </tr>
             @endforeach
         </tbody>

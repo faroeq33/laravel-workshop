@@ -88,6 +88,17 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
+    public function delete(Category $category)
+    {
+        return view('admin.categories.delete', compact('category'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Category  $category
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Category $category)
     {
         //

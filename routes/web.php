@@ -17,9 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('categories/{category}/delete', 'CategoryController@delete')->name(
+    'categories.delete'
+);
+
 Route::resource('/categories', 'CategoryController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
