@@ -8,8 +8,8 @@
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session('message') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+            <span
+                aria-hidden="true">&times;</span>https://test123.rotterdamp.com/assets/css/build/tailwind-compiled.css?ver=5.3.2
     </div>
     @endif
 
