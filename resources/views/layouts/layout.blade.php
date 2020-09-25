@@ -59,8 +59,6 @@
               <a class="dropdown-item text-capitalize" href="{{ route('categories.index') }}">Category
                 admin</a>
               <a class="dropdown-item text-capitalize" href="#">Product admin</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
 

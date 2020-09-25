@@ -24,7 +24,8 @@ Route::resource('/categories', 'CategoryController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['middleware' => ['role:customer|sales|admin']], function () {
+
+Route::group(['middleware' => ['role:sales|admin']], function () {
     Route::get('categories/{category}/delete', 'CategoryController@delete')
         ->name('categories.delete');
     Route::resource('/categories', 'CategoryController');
