@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Category;
+use App\Product;
 
 class CategorySeeder extends Seeder
 {
@@ -12,6 +13,9 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class, 10)->create();
+        factory(Category::class, 10)->create()
+            ->each(function ($category) {
+                $category->product()->saveMany(factory(Product::class, 10)->create(['category_id' => $category->id]));
+            });
     }
 }
