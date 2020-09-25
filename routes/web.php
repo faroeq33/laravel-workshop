@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('start');
 
 Route::get('categories/{category}/delete', 'CategoryController@delete')->name(
     'categories.delete'
@@ -26,3 +24,8 @@ Route::resource('/categories', 'CategoryController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['role:customer|sales|admin']], function () {
+    Route::get('categories/{category}/delete', 'CategoryController@delete')
+        ->name('categories.delete');
+    Route::resource('/categories', 'CategoryController');
+});
