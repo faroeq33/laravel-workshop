@@ -50,10 +50,11 @@
             <a class="nav-link" href="#">Link</a>
           </li>
 
+          @hasanyrole('sales|admin')
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              Dropdown
+              Admin
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item text-capitalize" href="{{ route('categories.index') }}">Category
@@ -61,6 +62,7 @@
               <a class="dropdown-item text-capitalize" href="#">Product admin</a>
             </div>
           </li>
+          @endhasanyrole
 
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
