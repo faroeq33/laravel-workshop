@@ -22,9 +22,9 @@ class RoleAndPermissionSeeder extends Seeder
         $role = Role::create(['name' => 'customer']);
 
         $role = Role::create(['name' => 'sales']);
-        $role->giverPermissionTo('create category', 'edit category');
+        $role->givePermissionTo('create category', 'edit category');
 
-        $role = Role::create(['name' => 'sales']);
+        $role = Role::create(['name' => 'admin']);
         $role->givePermissionTo(Permission::all());
     }
 }
