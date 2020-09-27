@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Price;
+use App\Product;
 use Faker\Generator as Faker;
 
 $factory->define(Price::class, function (Faker $faker) {
