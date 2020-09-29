@@ -59,10 +59,14 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item text-capitalize" href="{{ route('categories.index') }}">Category
                 admin</a>
-              <a class="dropdown-item text-capitalize" href="#">Product admin</a>
+              <a class="dropdown-item text-capitalize" href="{{ route('products.index') }}">Product admin</a>
             </div>
           </li>
           @endhasanyrole
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('products.index') }}">Product Test</a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>

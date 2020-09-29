@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('start');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('products/{product}/delete', 'ProductController@delete')->name(
+    'products.delete'
+);
+Route::resource('/products', 'ProductController');
 
 Route::get('categories/{category}/delete', 'CategoryController@delete')->name(
     'categories.delete'
@@ -26,7 +32,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['role:sales|admin']], function () {
-    Route::get('categories/{category}/delete', 'CategoryController@delete')
-        ->name('categories.delete');
+    Route::get(
+        'categories/{category}/delete',
+        'CategoryController@delete'
+    )->name('categories.delete');
     Route::resource('/categories', 'CategoryController');
 });
