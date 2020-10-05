@@ -20,11 +20,12 @@ class CategorySeeder extends Seeder
                 $category->product()->saveMany(
                     factory(Product::class, 10)
                         ->create(['category_id' => $category->id])
-                        ->each(function ($product) {
+                        ->each(function ($product) 
+                        {
                             $product
                                 ->price()
-                                ->saveMany(factory(Price::class, 3))
-                                ->create(['product_id' => $product->id]);
+                                ->saveMany( factory(Price::class, 3 ) )
+                                ->create( ['product_id' => $product->id] );
                         })
                 );
             });

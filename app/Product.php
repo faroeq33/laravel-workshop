@@ -17,6 +17,6 @@ class Product extends Model
 
     public function latest_price()
     {
-        return $this->hasOne('App/Price')->orderBy('effdate', 'desc');
+        return $this->hasOne('App\Price')->orderBy('effdate', 'desc');
     }
 }
