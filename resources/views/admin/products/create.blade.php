@@ -29,7 +29,7 @@
     @csrf
     <div class="form-group">
         <label for="exampleInputEmail1" class="mt-3">Product</label>
-        <input type="text" class="form-control" id="name" price="name" aria-describedby="nameHelp"
+<input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
             placeholder="Enter productname">
     </div>
     <div class="form-group">

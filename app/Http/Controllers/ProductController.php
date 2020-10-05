@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Price;
 use App\Product;
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -38,7 +40,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->category_id = $request->category_id;
+        $product->save();
+        
+        $price = new Price();
+        $price->price = $request->price;
+        $price->effdate = Carbon::now();
+        $price->product_id = $product->id;
+        $price->save();
+
+        return redirect()->route('products.index')->with('message','Product toegevoegd');
     }
 
     /**
