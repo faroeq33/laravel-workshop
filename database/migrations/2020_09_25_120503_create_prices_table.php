@@ -15,8 +15,8 @@ class CreatePricesTable extends Migration
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
-            $table->decimal('name', 8, 2);
-            $table->dateTime('description');
+            $table->decimal('price', 8, 2);
+            $table->dateTime('effdate');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')
                 ->references('id')->on('products')

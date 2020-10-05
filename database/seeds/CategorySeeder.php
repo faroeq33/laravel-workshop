@@ -16,17 +16,20 @@ class CategorySeeder extends Seeder
     {
         factory(Category::class, 3)
             ->create()
-            ->each(function ($category) {
-                $category->product()->saveMany(
-                    factory(Product::class, 10)
-                        ->create(['category_id' => $category->id])
-                        ->each(function ($product) 
-                        {
-                            $product
-                                ->price()
-                                ->saveMany( factory(Price::class, 3 ) )
-                                ->create( ['product_id' => $product->id] );
-                        })
+            ->each(function ($category) 
+            {
+                $category
+                    ->product()
+                    ->saveMany(
+                        factory(Product::class, 10)
+                            ->create(['category_id' => $category->id])
+                            ->each(function ($product) 
+                            {
+                                $product
+                                    ->price()
+                                    ->saveMany( factory( Price::class, 3 ) )
+                                    ->create( ['product_id' => $product->id] );
+                            })
                 );
             });
     }
