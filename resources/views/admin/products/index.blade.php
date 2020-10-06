@@ -5,7 +5,7 @@
   <h1 class="mt-5">Products</h1>
 
   @if (session('message'))
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+<div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('message') }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span>
   </div>
@@ -40,7 +40,7 @@
         <th class="font-weight-lighter" scope="row">{{ $product->id }}</th>
         <td>{{ $product->name }}</td>
         <td>{{ $product->category->name }}</td>
-<td>{{ $product->latest_price->price }}</td>
+<td>{{ $product->latest_price['price']}}</td>
         <td><a href="{{ route('products.show', ['product' => $product->id]) }}">Details</a></td>
         <td><a href="{{ route('products.edit', ['product' => $product->id]) }}">Edit</a></td>
         <td><a href="{{ route('products.delete', ['product' => $product->id]) }}">Delete</a></td>

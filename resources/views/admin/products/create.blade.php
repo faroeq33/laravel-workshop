@@ -28,24 +28,27 @@
 <form method="POST" action="{{ route('products.store') }}">
     @csrf
     <div class="form-group">
-        <label for="exampleInputEmail1" class="mt-3">Product</label>
-<input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
+        <label for="exampleInputEmail1" class="mt-3">Productname</label>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp"
             placeholder="Enter productname">
     </div>
     <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+        <textarea class="form-control" name="description" id="description" rows="3">{{ old('description') }}</textarea>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1" class="mt-3">Price</label>
-        <input type="text" class="form-control" id="price" name="price" aria-describedby="priceHelp"
-            placeholder="Enter price...">
+        <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}"
+            aria-describedby="priceHelp" placeholder="Enter price...">
     </div>
     <div class="form-group">
         <label for="category_id" class="mt-3">Category</label>
         <Select name="category_id" id="category_id" class="mt-3 form-control">
             @foreach ($categories as $category)
-            <option value="{{ $category->id }}">{{ $category->name }}</option>
+            <option value="{{ $category->id }}" @if ( old('category_id')==$category->id)
+                selected
+                @endif
+                >{{ $category->name }}</option>
             @endforeach
         </Select>
 
